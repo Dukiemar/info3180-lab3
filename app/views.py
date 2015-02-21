@@ -40,7 +40,7 @@ def send_text_file(file_name):
 def contact():
   return render_template('contact.html') 
 
-@app.route('/sendmail',method=['POST'])
+@app.route('/sendemail',method=['POST'])
 def sendemail():
   import smtplib
   fromname=request.form['fromname']
