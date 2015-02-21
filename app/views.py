@@ -30,7 +30,7 @@ def about():
 def contact():
     return render_template('contact.html') 
 
-@app.route('/sendemail',method=['POST'])
+@app.route('/sendemail',methods=['POST'])
 def sendemail():
     import smtplib
     fromname=request.form['fromname']
