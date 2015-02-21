@@ -15,17 +15,6 @@ import smtplib
 # Routing for your application.
 ###
 
-@app.route('/')
-def home():
-    """Render website's home page."""
-    return render_template('home.html')
-
-
-@app.route('/about/')
-def about():
-    """Render the website's about page."""
-    return render_template('about.html')
-  
 @app.route('/contact/')
 def contact():
     return render_template('contact.html') 
@@ -67,11 +56,21 @@ def sendemail():
 
     return render_template('contact.html')
 
-
+  
+@app.route('/')
+def home():
+    """Render website's home page."""
+    return render_template('home.html')  
+  
+@app.route('/about/')
+def about():
+    """Render the website's about page."""
+    return render_template('about.html')
 
 ###
 # The functions below should be applicable to all Flask apps.
 ###
+
 
 @app.route('/<file_name>.txt')
 def send_text_file(file_name):
@@ -99,5 +98,4 @@ def page_not_found(error):
 
 
 if __name__ == '__main__':
-    sendemail(fromname,fromemail,fromsubject,msg)
     app.run(debug=True,host="0.0.0.0",port="8888")
